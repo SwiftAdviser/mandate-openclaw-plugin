@@ -1,0 +1,37 @@
+{
+  "id": "mandate-openclaw-plugin",
+  "name": "Mandate",
+  "version": "1.2.1",
+  "description": "Policy gatekeeper for AI agent wallets. AFTER INSTALL: run mandate_register to get your runtimeKey, then mandate_validate before every financial action.",
+  "skills": ["./skills/mandate"],
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "runtimeKey": {
+        "type": "string",
+        "description": "Mandate runtime key (mndt_live_... or mndt_test_...). Get one via mandate_register tool."
+      }
+    }
+  },
+  "uiHints": {
+    "labels": { "runtimeKey": "Runtime Key" }
+  },
+  "postInstall": {
+    "message": "Mandate plugin installed. Next step: call mandate_register with your agent name and wallet address to get a runtimeKey. Then share the claimUrl with the wallet owner.",
+    "action": "mandate_register",
+    "requiredFields": ["name", "evmAddress"],
+    "example": "mandate_register name='MyAgent' evmAddress='0xYourWalletAddress'"
+  },
+  "activation": {
+    "check": "mandate_status",
+    "requiredConfig": ["runtimeKey"],
+    "notConfiguredMessage": "Mandate is not configured. Run mandate_register to get a runtimeKey, or set it in plugins.entries.mandate-openclaw-plugin.config.runtimeKey"
+  },
+  "security": {
+    "envAccess": [],
+    "networkAccess": ["https://app.mandate.md/api/*"],
+    "fileAccess": ["~/.openclaw/mandate-data/runtime-key"],
+    "reason": "Zero env access. Persists its own runtimeKey to ~/.openclaw/mandate-data/runtime-key (written by mandate_register, read on startup). Path derived from plugin install location via import.meta.url, not from env vars. All network requests go to hardcoded https://app.mandate.md. No dynamic URLs."
+  },
+  "install": { "npmSpec": "@mandate.md/mandate-openclaw-plugin" }
+}

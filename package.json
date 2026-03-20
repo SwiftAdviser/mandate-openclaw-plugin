@@ -1,0 +1,57 @@
+{
+  "name": "@mandate.md/mandate-openclaw-plugin",
+  "version": "1.2.1",
+  "description": "OpenClaw plugin for Mandate policy-enforced on-chain tools",
+  "type": "module",
+  "files": [
+    "dist",
+    "hooks",
+    "skills",
+    "openclaw.plugin.json",
+    "SKILL.md",
+    "README.md"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "openclaw": {
+    "extensions": ["./dist/index.js"]
+  },
+  "dependencies": {
+    "@mandate.md/sdk": "^0.2.0",
+    "viem": ">=2.0.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SwiftAdviser/mandate-openclaw-plugin"
+  },
+  "homepage": "https://mandate.md",
+  "license": "BSL-1.1",
+  "keywords": [
+    "mandate",
+    "openclaw",
+    "plugin",
+    "agent",
+    "wallet",
+    "policy",
+    "spend-limits",
+    "ai-agent",
+    "evm",
+    "web3"
+  ]
+}
