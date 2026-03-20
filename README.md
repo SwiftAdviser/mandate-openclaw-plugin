@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/SwiftAdviser/mandate/master/public/hackathon/cover.png" alt="Mandate. See why your agent spends. Stop it when it shouldn't." width="100%" />
+  <img src="public/hackathon/cover.png" alt="Mandate. See why your agent spends. Stop it when it shouldn't." width="100%" />
 </p>
 
 
@@ -83,7 +83,7 @@ Every time you approve or reject a transaction, Mandate observes the pattern. Af
 Suggestions appear as cards in the dashboard and as inline buttons in Telegram. Accept with one tap: Mandate writes the rule into your MANDATE.md or updates the policy field. Dismiss, and it never resurfaces. Your policy evolves from your decisions, not from manual editing.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/SwiftAdviser/mandate/master/public/hackathon/mandate-rules.png" alt="MANDATE.md rules editor in dashboard" width="80%" />
+  <img src="public/hackathon/mandate-rules.png" alt="MANDATE.md rules editor in dashboard" width="80%" />
 </p>
 
 ## The `reason` field
@@ -161,7 +161,7 @@ We don't replace your session keys. We make them decision-aware.
 | **Audit trail** | Every intent logged with WHO, WHAT, WHEN, HOW MUCH, and **WHY** |
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/SwiftAdviser/mandate/master/public/hackathon/audit-log.png" alt="Audit log: every intent with WHY" width="80%" />
+  <img src="public/hackathon/audit-log.png" alt="Audit log: every intent with WHY" width="80%" />
 </p>
 
 ## Private reasoning, zero retention
@@ -225,7 +225,7 @@ flowchart LR
 > For self-custodial EVM wallets, the legacy `/validate/raw` endpoint adds intent hash verification, envelope verification, and circuit breaker protection.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/SwiftAdviser/mandate/master/public/hackathon/dashboard.png" alt="Mandate agent dashboard" width="80%" />
+  <img src="public/hackathon/dashboard.png" alt="Mandate agent dashboard" width="80%" />
 </p>
 
 ## Architecture
